@@ -1,0 +1,119 @@
+/* Обертка которая обрезает все лишнее что выходит за ширину страници,
+к примеру если вы что то вытаскиваете марджинами то у вас появится горизонтальный скролл на странице, эта обертка его срезает
++ если вы забыли указать position: relative; на нужном блоке, это ваша отправная точка для позиционирования,
+чтобы не трогать body
+эта обертка есть в каждом проекте */
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Элемент который центрирует контент на странице (только центрирует) */
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Обертка для полей формы */
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Поля формы */
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  border-color: #000;
+}
+
+.form-control:focus {
+  border-color: #ff0;
+}
+
+/* Placeholder полей */
+
+.form-control::-webkit-input-placeholder {
+  color: #f00;
+}
+
+.form-control::-moz-placeholder {
+  opacity: 1;
+  color: #f00;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #f00;
+}
+
+/*
+==================================================
+Мои стили
+==================================================
+*/
+
+.title {
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+.title span {
+  border-bottom: 4px solid #4e5a62;
+  padding-bottom: 10px;
+}
+
+.img-box {
+  position: relative;
+}
+
+.img-box img {
+  transition: opacity .5s;
+}
+
+.img-box:hover img {
+  opacity: 0.4;
+}
+
+.img-box:hover .subtitle,
+.img-box:hover .icon-plus {
+  opacity: 1;
+  visibility: visible;
+}
+
+.boxy {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.icon-plus {
+  font-size: 2em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+  margin: auto;
+}
+
+.subtitle {
+  font-size: 1em;
+  text-transform: uppercase;
+  background-color: #292f36;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+  padding: 20px 20px;
+  margin: 0;
+}
